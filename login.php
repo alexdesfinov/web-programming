@@ -10,7 +10,9 @@
 
 <head>
 
-	<link rel="stylesheet" type="text/css" href="css/inces.css">
+	<?php include("includes/css_header.php") ?>
+	<link rel="stylesheet" href="css/login.css">
+
 
 </head>
 <body style="background-image: url('images/bakery.jpeg');background-size: cover; background-position: center;">
@@ -20,7 +22,7 @@
 <div class="container" id="container">
 	<div class="form-container sign-up-container">
 		<form action="" method="post">
-			<h1>BUAT AKUN</h1>
+			<h2>BUAT AKUN</h2>
 			<span>atau gunakan email anda untuk mendaftar</span>
 			<input type="text" placeholder="Nama" />
 			<input type="email" placeholder="Email" />
@@ -30,7 +32,7 @@
 	</div>
 	<div class="form-container sign-in-container">
 		<form action="" method="post">
-			<h1>MASUK</h1>
+			<h2>MASUK</h2>
 			<span>silahkan masukan email anda untuk masuk</span>
 			<input type="email" placeholder="Email" name="email" />
 			<input type="password" placeholder="Kata Sandi" name="password" />
@@ -40,12 +42,12 @@
 	<div class="overlay-container">
 		<div class="overlay">
 			<div class="overlay-panel overlay-left">
-				<h1>Selamat Datang Kembali!</h1>
+				<h2>Selamat Datang Kembali!</h2>
 				<p>Untuk Tetap Terhubung Dengan Kami Silahkan Masuk</p>
 				<button class="ghost" id="signIn">Masuk</button>
 			</div>
 			<div class="overlay-panel overlay-right">
-				<h1>Hello, Teman!</h1>
+				<h2>Hello, Teman!</h2>
 				<p>Isi Data Anda dan Jelajahi Toko dengan Kami</p>
 				<button class="ghost" id="signUp">Daftar</button>
 			</div>

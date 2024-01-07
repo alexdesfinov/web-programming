@@ -74,6 +74,3 @@
         <p class="justify">
         <marquee><h4 class="text-center"><b>Terima Kasih Sudah Belanja Di De' Irma hobbies</b></h4></marquee>
       </footer>
-
-</body>
-</html>

@@ -90,14 +90,15 @@
           while($row1=mysqli_fetch_assoc($result1))
           {?>
             <div class="col">
+              <a href="product_description.php?product_id=<?php echo $row1["product_id"]?>" class="text-decoration-none" >
               <div class="smallcard card h-80" style="width: 15rem;">
                   <img src="images/<?php echo $row1['product_image'];?> " class="card-img-top" style="padding: 10px; height: 150px; " >
                   <div class="card-body">
                     <h5 class="text-center card-title"><b><?php echo $row1['product_name']; ?></b></h5>
                     <p class="justify card-text" style="margin-top: 20px;" ><b><i></i>Rp <?php echo number_format($row1["product_price"],0,",",".");; ?></b></p>
                   </div>
-                 
-              </div>';
+              </div>
+              </a>
             </div> 
           <?php } ?>   
         
