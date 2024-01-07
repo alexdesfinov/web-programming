@@ -56,8 +56,7 @@ if(isset($_SESSION["login"])) {
                                         <td><?php echo $row["amount"]; ?></td>
                                         <td><?php echo $row["total"]; ?></td>
                                         <td class="d-flex justify-content-around">
-                                            <a href="" class="btn btn-primary">EDIT</a>
-                                            <a href="" class="btn btn-primary">EDIT</a>
+                                            <a href="includes/selesaipesanan.php?order_id=<?php echo $row["order_id"]?>" class="btn btn-primary">Selesai</a>
                                         </td>
                                     </tr> 
                                 <?php endforeach; ?>

@@ -17,26 +17,38 @@
 </head>
 <body style="background-image: url('images/bakery.jpeg');background-size: cover; background-position: center;">
    
-	
+<?php if (isset($_SESSION["daftar"])) : ?>
+	<div class="alert alert-success" id="myAlert">
+		Daftar Berhasil
+	</div>		
+<?php endif; ?>
 
 <div class="container" id="container">
 	<div class="form-container sign-up-container">
 		<form action="" method="post">
 			<h2>BUAT AKUN</h2>
 			<span>atau gunakan email anda untuk mendaftar</span>
-			<input type="text" placeholder="Nama" />
-			<input type="email" placeholder="Email" />
-			<input type="password" placeholder="Kata Sandi" />
-			<button type="submit" name="daftar" >daftar</button>
+			<input type="text" placeholder="Nama" name="nama" required/>
+			<input type="email" placeholder="Email" name="email" required/>
+			<input type="password" placeholder="Kata Sandi" name="password" required/>
+			<?php if(isset($err3)) :?>
+			<span style="color: red; font-style: italic;" >User Sudah Ada</span>
+			<?php endif ?>
+			<button type="submit" name="daftar" class="mt-2"  >daftar</button>
 		</form>
 	</div>
 	<div class="form-container sign-in-container">
 		<form action="" method="post">
 			<h2>MASUK</h2>
 			<span>silahkan masukan email anda untuk masuk</span>
-			<input type="email" placeholder="Email" name="email" />
-			<input type="password" placeholder="Kata Sandi" name="password" />
-			<button type="submit" name="login">Masuk</button>
+			<input type="email" placeholder="Email" name="email" required/>
+			<input type="password" placeholder="Kata Sandi" name="password" required/>
+			<?php if(isset($err1)) :?>
+			<span style="color: red; font-style: italic;" >Password Salah</span>
+			<?php elseif(isset($err2)) :?>
+			<span style="color: red; font-style: italic;" >User Tidak Ada</span>
+			<?php endif ?>
+			<button type="submit" name="login" class="mt-2">Masuk</button>
 		</form>
 	</div>
 	<div class="overlay-container">

@@ -39,7 +39,8 @@
                 </tr>
               </thead>
               <tbody> 
-                <?php $data = getData("SELECT * FROM orders"); ?>
+                <?php $user_id = $_SESSION["user_id"] ?>
+                <?php $data = getData("SELECT * FROM orders WHERE user_id LIKE $user_id"); ?>
                 <?php foreach ($data as $row) : ?>
                 <tr class="text-center">
                   <td><?php echo $row["name"]; ?></td>

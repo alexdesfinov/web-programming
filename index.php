@@ -18,8 +18,6 @@
       include "includes/header_prelogin.php";
     }
   ?>
-  
-  <link rel="stylesheet" href="css/incesp.css">
 
 </head>
 <body style="background-image: url('images/bakery.jpeg'); background-size: cover; background-position: center;">
@@ -45,9 +43,9 @@
                 <img src="images/logo.jpg" class="img-size img-circle">
               </div>
 
-              <div class="col-md-8">
-                <h1 class="text-center"> <b>Tentang De' Irma hobbies</b> </h1>
-                <p><b><i>De Irma hobbies merupakan umkm yang bergerak dibidang makanan yang menjual berbagai macam kue kering dan pizza dengan rasa yang memiliki cita rasa tersendiri, selain rasanya yang enak,makanan dibuat tanpa menggunakan bahan pengawet sehingga aman dikonsumsi diberbagai kalangan, menu - menu yang tersedia  bisa dijadikan hampers atau cocok disajikan dalam berbagai macam acara seperti lebaran, kumpul bersama keluarga dan acara lainnya  </i></b></p>  
+              <div class="col-md-9 py-4 text-justify">
+                <h1 class="text-center mb-4"> <b>Tentang De' Irma hobbies</b> </h1>
+                <p class="p-3" ><b><i>De Irma hobbies merupakan umkm yang bergerak dibidang makanan yang menjual berbagai macam kue kering dan pizza dengan rasa yang memiliki cita rasa tersendiri, selain rasanya yang enak,makanan dibuat tanpa menggunakan bahan pengawet sehingga aman dikonsumsi diberbagai kalangan, menu - menu yang tersedia  bisa dijadikan hampers atau cocok disajikan dalam berbagai macam acara seperti lebaran, kumpul bersama keluarga dan acara lainnya  </i></b></p>  
               </div>
             </div>
           </div>
@@ -67,13 +65,13 @@
         {?>
            <div class="col">
                 <div class="card h-100" style="width: 18rem;">
-                  <img src="images/<?php echo $row['product_image'];?> " class="card-img-top" style="padding: 10px; height: 250px; " >
+                  <img src="images/<?php echo $row['product_image'];?> " class="card-img-top object-fit-cover" style="padding: 10px; height: 250px; border-radius: 25px; " >
                   <div class="card-body">
-                    <h3 class="text-center card-title"><b><?php echo $row['product_name']; ?></b></h3>
-                    <p class="justify card-text"><b><i></i><?php echo $row['product_description']; ?></b></p>
+                    <h3 class="text-center card-title mb-4"><b><?php echo $row['product_name']; ?></b></h3>
+                    <p class="justify card-text text-justify"><i></i><?php echo $row['product_description']; ?></p>
                   </div>
-                  <div class="card-footer" style="background-color: #B99470;" >
-                    <a href="product_description.php?product_id=<?php echo $row["product_id"];?>" class="card-footer bg-transparent" style="background-color:#B99470;"> Lihat Rincian </a>
+                  <div class="cardf card-footer text-center">
+                    <b><a href="product_description.php?product_id=<?php echo $row["product_id"];?>&product_price=<?php echo $row["product_price"];?>" class="card-footer bg-transparent text-decoration-none" style="background-color:#B99470;">Lihat Rincian </a></b>
                   </div>
                 </div>';
            </div> 
@@ -90,12 +88,12 @@
           while($row1=mysqli_fetch_assoc($result1))
           {?>
             <div class="col">
-              <a href="product_description.php?product_id=<?php echo $row1["product_id"]?>" class="text-decoration-none" >
+              <a href="product_description.php?product_id=<?php echo $row["product_id"];?>&product_price=<?php echo $row["product_price"];?>" class="text-decoration-none" >
               <div class="smallcard card h-80" style="width: 15rem;">
-                  <img src="images/<?php echo $row1['product_image'];?> " class="card-img-top" style="padding: 10px; height: 150px; " >
+                  <img src="images/<?php echo $row1['product_image'];?> " class="card-img-top object-fit-cover" style="padding: 10px; height: 150px; border-radius: 25px;" >
                   <div class="card-body">
-                    <h5 class="text-center card-title"><b><?php echo $row1['product_name']; ?></b></h5>
-                    <p class="justify card-text" style="margin-top: 20px;" ><b><i></i>Rp <?php echo number_format($row1["product_price"],0,",",".");; ?></b></p>
+                    <h5 class="text-center card-title mb-4"><b><?php echo $row1['product_name']; ?></b></h5>
+                    <p class="justify card-text" style="margin-top: 20px;" ><b><i class="btn rounded-5" style="background-color: burlywood;" >Rp <?php echo number_format($row1["product_price"],0,",",".");; ?></i></b></p>
                   </div>
               </div>
               </a>

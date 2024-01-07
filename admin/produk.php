@@ -48,8 +48,8 @@ if(isset($_SESSION["login"])) {
                                         <td><?php echo $row["product_name"]; ?></td>
                                         <td><?php echo $row["product_price"]; ?></td>
                                         <td><img src="../images/<?php echo $row["product_image"]; ?>" alt="" width="75" height="75"></td>
-                                        <td class="actiontd"><a href="" class="btn btn-primary">Edit</a></td>
-                                        <td class="actiontd"><a href="" class="btn btn-primary">Edit</a></td>
+                                        <td class="actiontd"><a href="includes/editproduk.php?" class="btn btn-primary">Edit</a></td>
+                                        <td class="actiontd"><a href="includes/hapusproduk.php?product_id=<?php echo $row["product_id"]?>" class="btn btn-primary">Hapus</a></td>
                                     </tr> 
                                 <?php endforeach; ?>
 

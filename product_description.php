@@ -9,7 +9,6 @@
 		}
 
   		include "includes/css_header.php";
-		include "includes/dbconnect.php";
 	?>
 	<body style="background-image: url('images/bakery.jpeg');background-size: cover; background-position: center;">
 		<?php include "includes/header_postlogin.php"; 				
@@ -44,17 +43,19 @@
 				echo '<div class="container">
 			        	<div class="row padding30">  
 			          		<div class="col-md-6">
-			                	<div class="product-tab">
-				           	  		<img src="images/'.$row['product_image'].'" class="img-size-lg">
+			                	<div class="product-tab rounded-5 p-3">
+				           	  		<img src="images/'.$row['product_image'].'" class="img-size-lg object-fit-cover" style="border-radius: 25px;" >
 				            	</div>
 					    	</div>
 				      	   	<div class="col-md-6">
-				      	   		<div class="product-tab">
-					                <h1 class="text-center"> '.$row['product_name'].'</h1>
-					                <p> &nbsp&nbsp&nbsp&nbsp '.$row['product_description'].'<br>
-					                <br> <b>&nbsp&nbsp&nbsp&nbspPrice: Rp '.$row['product_price'].'</b><br><br></p> 
-					                <a href="add_to_cart.php?product_id='.$product_id.'" class="btn btn-lg btn-danger">Keranjang</a>
-					                <a href="add_to_wishlist.php?product_id='.$product_id.'" class="btn btn-lg btn-danger">Wishlist</a>
+				      	   		<div class="product-tab p-3 rounded-4">
+					                <h1 class="text-center mb-3"> '.$row['product_name'].'</h1>
+					                <p class="text-justify" >'.$row['product_description'].'</p> 
+									<p class="my-5" ><b>Price: Rp '.number_format($row["product_price"],0,",",".").'</b></p>
+									<div class="container-fluid d-flex justify-content-around">
+										<a href="add_to_cart.php?product_id='.$product_id.'" class="btnprod btn btn-lg">Keranjang</a>
+										<a href="add_to_wishlist.php?product_id='.$product_id.'" class="btnprod btn btn-lg">Wishlist</a>
+									</div>
 				                </div>
 				           	</div>
 				        </div>

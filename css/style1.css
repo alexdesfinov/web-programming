@@ -133,6 +133,38 @@ h1{
     }
 }
 
+.smallcard {
+	transition: 0.5s;
+}
+
 .smallcard:hover {
     background-color: burlywood;
+}
+
+a {
+	text-decoration: none;
+}
+
+.cardf {
+	background-color: burlywood;
+	transition: 0.5s;
+}
+
+.cardf:hover {
+	background-color: grey;
+	color: white;
+}
+
+.btnprod {
+	background-color: burlywood;
+	transition: 0.5s;
+}
+
+.btnprod:hover {
+	background-color: grey;
+	color: white;
+}
+
+textarea {
+	resize: none;
 }

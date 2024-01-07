@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
+<style>
         .image-container {
             display: flex;
             align-items: center;
@@ -13,16 +8,14 @@
             max-width: 100px; /* Sesuaikan lebar gambar sesuai kebutuhan */
             margin-right: 10px; /* Sesuaikan jarak antara gambar dan teks sesuai kebutuhan */
         }
-    </style>
-    <title>Image with Text</title>
-</head>
-<body>
-  <div>
+
+</style>
+<div class="container-fluid mt-5" >
   <div class="row font-12px">
     <div class="col-md-4">
       <div class="footer">
         <p class="text-center">
-          <h4>
+        <h4>
           <h4 class="text-center"><b>Terms & Conditions</b></h4>
           <h4 class="text-center"><a href="#"> Privacy Policy</a></h4>
           <h4 class="text-center"><a href="#">Legal</a></h4>
@@ -68,9 +61,10 @@
       </div>      
     </div>
   </div>
-</div>
+
 <footer><div class="col-md-20">
       <div class="footer">
         <p class="justify">
         <marquee><h4 class="text-center"><b>Terima Kasih Sudah Belanja Di De' Irma hobbies</b></h4></marquee>
-      </footer>
+</footer>
+</div>

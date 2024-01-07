@@ -56,14 +56,15 @@
         while($row=mysqli_fetch_assoc($result))
         {
           echo '<div class="col-md-3">
-                  <div class="product-tab">
+                  <div class="product-tab p-3 rounded-4">
                     <img src="images/'.$row['product_image'].'" class="img-size curve-edge">
-                    <h3 class="text-center"><b>'.$row['product_name'].'</b></h3>
-                    <p class="justify"><b><i> &nbsp&nbsp&nbsp&nbsp '.$row['product_description'].'</i></b></p>
-                    <a href="product_description.php?product_id='.$row['product_id'].'" class="btn btn-block btn-success" >Lihat Detail</a>
-                    <a href="details_form.php?product_id='.$row['product_id'].'" class="btn btn-block btn-success" >Pesan Sekarang</a>
-                    <a href="delete_from_cart.php?product_id='.$row['product_id'].'" class="btn btn-block btn-danger" >Hapus Dari Keranjang</a>
-                    
+                    <h3 class="text-center my-4"><b>'.$row['product_name'].'</b></h3>
+                    <p class="text-justify my-4"><i>'.$row['product_description'].'</i></p>
+                    <div class="row g-2" >
+                      <a href="product_description.php?product_id='.$row['product_id'].'" class="btn btn-block btn-success" >Lihat Detail</a>
+                      <a href="details_form.php?product_id='.$row['product_id'].'&product_price='.$row['product_price'].'" class="btn btn-block btn-success" >Pesan Sekarang</a>
+                      <a href="delete_from_cart.php?product_id='.$row['product_id'].'" class="btn btn-block btn-danger" >Hapus Dari Keranjang</a>
+                    </div>
                   </div>
                 </div>';
         }

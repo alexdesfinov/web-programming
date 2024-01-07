@@ -1,35 +1,54 @@
 <?php 
-session_start();
 
-include("../functions/myFunction.php");
+include "../../functions/myFunction.php";
 
-if(!isset($_SESSION["login"])) {
-    header("Location: ../login.php");
-}
+$nobp = $_GET['nobp'];
+$nama = $_POST['nama'];
+$jekel = $_POST['jekel'];
+$ttl = $_POST['ttl'];
+$alamat = $_POST['alamat'];
+$agama = $_POST['agama'];
+$nohp = $_POST['nohp'];
+$email = $_POST['email'];
 
-if(isset($_POST["tambah"])) {
-
-    $nama = $_POST["nama"];
-    $harga = $_POST["harga"];
-    $deskripsi = $_POST["deskripsi"];
+if (isset($_POST['ubah_foto'])) {
     $foto = $_FILES['foto']['name'];
     $tmp = $_FILES['foto']['tmp_name'];
-    $path = "../images/".$foto;
+    $fotobaru = date('dmYHis').$foto;
+    $path = "image/".$fotobaru;
 
     if(move_uploaded_file($tmp, $path)){
-        $query = "INSERT INTO `products` (`product_id`, `product_name`, `product_price`,`product_description`,`product_image`) VALUES (NULL, '$nama','$harga','$deskripsi','$foto')";
-        $sql = mysqli_query($conn, $query);
-        if($sql){
-            $_SESSION["alert"] = true;
-        }else{
-            echo "Maaf, Terjadi Kesalahan Saat Input Data";
-            echo "<br><a href='form_simpan.php'>Kembali Ke Form</a>";
-        }
-        }else{
-            echo "Maaf, Gambar Gagal di Upload";
-            echo "<br><a href='form_simpan.php'>Kembali Ke Form</a>";
-        }
+        $query = "select * from mahasiswa where nobp ='".$nobp."'";
+        $sql = mysqli_query($connect, $query);
+        $data = mysqli_fetch_array($sql);
+
+    if (is_file("image/".$data['foto']))
+    unlink("image/".$data['foto']);
+    
+    $query = "update mahasiswa set nama='".$nama."', jekel='".$jekel."', ttl='".$ttl."', 
+    alamat='".$alamat."', agama='".$agama."', nohp='".$nohp."', email='".$email."', foto='".$fotobaru."' where nobp='".$nobp."'";
+	$sql = mysqli_query($connect, $query);
+	if($sql){
+		header("location: index.php");
+	} else{
+		echo "Maaf, Terjadi Kesalahan Saat Input Data";
+		echo "<br><a href='form_simpan.php'>Kembali Ke Form</a>";
     }
+	}else{
+		echo "Maaf, Gambar Gagal di Upload";
+		echo "<br><a href='form_simpan.php'>Kembali Ke Form</a>";
+	}
+}else {
+    $query = "update mahasiswa set nama='".$nama."', jekel='".$jekel."', ttl='".$ttl."', 
+    alamat='".$alamat."', agama='".$agama."', nohp='".$nohp."', email='".$email."' where nobp='".$nobp."'";
+	$sql = mysqli_query($connect, $query);
+	if($sql){
+		header("location: index.php");
+	} else{
+		echo "Maaf, Terjadi Kesalahan Saat Input Data";
+		echo "<br><a href='form_simpan.php'>Kembali Ke Form</a>";
+    }
+}
 
 ?>
 

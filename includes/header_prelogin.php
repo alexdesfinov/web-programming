@@ -14,7 +14,7 @@
           
         </ul>
         <div class="d-flex justify-content-center align-items-center gap-5">
-          <a href="login.php" class="text-white">Masuk</a>
+          <a href="login.php" class="text-black text-decoration-none">Masuk</a>
           <a href="login.php" class="text-white text-decoration-none px-3 py-1 rounded-4" style="background-color: grey;" >Daftar</a>
         </div>
       </div>
