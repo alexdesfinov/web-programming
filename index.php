@@ -21,11 +21,13 @@
 			if ($email == "admin@mangola.com") {
 				header("Location: admin/index.php");
 			}
-				
-			elseif (mysqli_num_rows($result) === 0) {
-			var_dump("Eroorr");
-			}
-		}    
+			
+			header("Location: products.php");
+
+
+		} elseif (mysqli_num_rows($result) === 0) {
+
+		} 
 	}
 
 ?>
@@ -43,23 +45,22 @@
 
 <div class="container" id="container">
 	<div class="form-container sign-up-container">
-		<form action="#">
+		<form action="" method="post">
 			<h1>BUAT AKUN</h1>
 			<span>atau gunakan email anda untuk mendaftar</span>
 			<input type="text" placeholder="Nama" />
 			<input type="email" placeholder="Email" />
 			<input type="password" placeholder="Kata Sandi" />
-			<button>daftar</button>
+			<button type="submit" name="daftar" >daftar</button>
 		</form>
 	</div>
 	<div class="form-container sign-in-container">
-		<form action="#">
+		<form action="" method="post">
 			<h1>MASUK</h1>
 			<span>silahkan masukan email anda untuk masuk</span>
-			<input type="email" placeholder="Email" />
-			<input type="password" placeholder="Kata Sandi" />
-		
-			<button>Masuk</button>
+			<input type="email" placeholder="Email" name="email" />
+			<input type="password" placeholder="Kata Sandi" name="password" />
+			<button type="submit" name="login">Masuk</button>
 		</form>
 	</div>
 	<div class="overlay-container">
@@ -67,12 +68,12 @@
 			<div class="overlay-panel overlay-left">
 				<h1>Selamat Datang Kembali!</h1>
 				<p>Untuk Tetap Terhubung Dengan Kami Silahkan Masuk</p>
-				<button class="ghost" id="signIn">Sign In</button>
+				<button class="ghost" id="signIn">Masuk</button>
 			</div>
 			<div class="overlay-panel overlay-right">
 				<h1>Hello, Teman!</h1>
 				<p>Isi Data Anda dan Jelajahi Toko dengan Kami</p>
-				<button class="ghost" id="signUp">Sign Up</button>
+				<button class="ghost" id="signUp">Daftar</button>
 			</div>
 		</div>
 	</div>

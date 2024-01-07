@@ -11,7 +11,7 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav pull-right">
-            <li><a class="text-white" href="#"> <?php echo $_SESSION['name'];?> </a></li>
+            <li><a class="text-white" href="#"> <?php echo $_SESSION['login'];?> </a></li>
             <li><a class="text-white" href="products.php">Beranda</a></li>
             <li><a class="text-white" href="products.php">Kategori</a></li>
             <li><a class="text-white" href="show_cart_items.php">Keranjang</a></li>

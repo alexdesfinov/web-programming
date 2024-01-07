@@ -1,11 +1,11 @@
 <?php
   session_start();
   
-  if(!(isset($_SESSION['name'])&&isset($_SESSION['email'])))
-  {
-    header('Location: register.php');
-  }
   include "includes/dbconnect.php";
+  
+  if (!isset($_SESSION["login"])) {
+    header("Location: index.php");
+  }
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +25,7 @@
   
 
   <div class="container ">
-    <h1 class="text text-white text-center font-80px margin-bottom50"> <b>Selamat Datang <?php echo $_SESSION['name']; ?>! Mau Pesan Apa?</b></h1>
+    <h1 class="text text-white text-center font-80px margin-bottom50"> <b>Selamat Datang <?php echo $_SESSION['login']; ?>! Mau Pesan Apa?</b></h1>
 
     <div class="row" >
       
