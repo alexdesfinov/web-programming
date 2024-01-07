@@ -1,10 +1,10 @@
 <?php 
   session_start();
-  if(!(isset($_SESSION['name'])&&isset($_SESSION['email'])))
+  if(!isset($_SESSION["login"]))
   {
-    header('Location: register.php');
+    header('Location: login.php');
   }
-  include "includes/dbconnect.php";
+  include "functions/myFunction.php";
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +23,7 @@
         $user_id=$_SESSION['user_id'];
 
         $query="SELECT * FROM `wishlist` c JOIN `products` p ON c.`product_id`=p.`product_id` WHERE c.`user_id`=$user_id";
-        $result=mysqli_query($connection,$query);
+        $result=mysqli_query($conn,$query);
         if(isset($_GET['msg']))   //if page returned from delete_from_wishlist
         { 
             if ($_GET['msg']==1)

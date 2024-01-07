@@ -53,12 +53,12 @@
 
     <div class="col-md-4">       
       <div class="footer">
-        <h4 class="text-center"><b>Follow De' Irma hobbies on:</b> </h4>
+        <h4 class="text-center p-3"><b>Follow De' Irma hobbies on:</b> </h4>
         <a href="https://www.instagram.com/deirmahobbies/" class="image-container">
         <img src="images/insta.jpg" class="thumbnail" alt="Instagram">
         <span>INSTAGRAM</span></a>
 
-        <a href="https://www.tiktok.com/@mangkuksayakbadetapadang/" class="image-container">
+        <a href="https://www.tiktok.com/@mangkuksayakbadetapadang/" class="image-container py-4">
         <img src="images/tiktok.png" class="thumbnail" alt="TikTok">
         <span>TIKTOK</span></a>
 

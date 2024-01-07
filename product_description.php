@@ -1,11 +1,13 @@
 <html>
 	<?php 
 		session_start();
+
+		include("functions/myFunction.php");
 		
-		if(!(isset($_SESSION['name'])&&isset($_SESSION['email'])))
-  		{
-    		header('Location: register.php');
-  		}
+		if(!isset($_SESSION["login"])) {
+			header("Location: login.php");
+		}
+
   		include "includes/css_header.php";
 		include "includes/dbconnect.php";
 	?>
@@ -13,7 +15,7 @@
 		<?php include "includes/header_postlogin.php"; 				
       	$product_id=$_GET['product_id'];
       	$query="SELECT * FROM `products` WHERE `product_id` LIKE '$product_id'";
-      	$results=mysqli_query($connection,$query);
+      	$results=mysqli_query($conn,$query);
       	$row=mysqli_fetch_assoc($results);
       	
       	if(isset($_GET['msg']))

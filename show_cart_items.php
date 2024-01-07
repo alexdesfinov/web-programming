@@ -1,6 +1,6 @@
 <?php
   session_start();  
-  if(!(isset($_SESSION['name'])&&isset($_SESSION['email'])))
+  if(!isset($_SESSION["login"]))
   {
     header('Location: register.php');
   }
@@ -61,7 +61,7 @@
                     <h3 class="text-center"><b>'.$row['product_name'].'</b></h3>
                     <p class="justify"><b><i> &nbsp&nbsp&nbsp&nbsp '.$row['product_description'].'</i></b></p>
                     <a href="product_description.php?product_id='.$row['product_id'].'" class="btn btn-block btn-success" >Lihat Detail</a>
-                    <a href="add_to_order.php?product_id='.$row['product_id'].'" class="btn btn-block btn-success" >Pesan Sekarang</a>
+                    <a href="details_form.php?product_id='.$row['product_id'].'" class="btn btn-block btn-success" >Pesan Sekarang</a>
                     <a href="delete_from_cart.php?product_id='.$row['product_id'].'" class="btn btn-block btn-danger" >Hapus Dari Keranjang</a>
                     
                   </div>

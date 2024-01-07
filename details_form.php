@@ -1,37 +1,49 @@
 <?php
 	session_start();	
-	if(!(isset($_SESSION['name'])&&isset($_SESSION['email'])))
+	if(!isset($_SESSION["login"]))
 	{
-    	header('Location: register.php');
+	  header('Location: login.php');
 	}
-	include "includes/dbconnect.php";
+	include "functions/myFunction.php";
+	
 	$product_id=$_GET['product_id'];
 	$user_id=$_SESSION['user_id'];
 	
 
 ?>
+<link rel="stylesheet" href="css/incesdp.css">
 <!DOCTYPE html>
+<head>
+<?php 
+	include "includes/css_header.php";
+	include "includes/header_postlogin.php";
+	?>
+</head>
 <html>
-	<?php include "includes/css_header.php" ?>
-	<body style="background-color: #EEEEEE;">
-		<?php include "includes/header_postlogin.php" ?>
-		
-		<div class="row">
-			<div class="col-md-6">
-				<h1 class="text-center"> <b>Silahkan Masukkan Detail Pengiriman Produk. Terima Kasih..</b> </h1><br>
-				<i class="text-center"><h3><b>NOTE: Metode Pembayaran COD('Cash On Delivery')</b><h3></i>
-			</div>
-			<div class="col-md-6">
 
-				<form class="text-center" action="add_to_details.php" method="POST">
-					<input type="hidden" name="product_id" value=" <?php echo $product_id; ?>">
-					<label><h3><b>Masukkan Alamat: </b></h3></label>
-					<input type="text" name="address" class="form-control" placeholder="Address..."><br>
-					<label><h3><b>Jumlah Pesanan: </b></h3></label>
-					<input type="number" step="0.01" name="quantity" class="form-control" placeholder="...Item"><br>
-					<input type="submit" value="Submit Details" class="btn btn-danger btn-lg">
-				</form>
-			</div>
-		</div>
+	<body style="background-image: url('images/bakery.jpeg'); background-size: cover; background-position: center;">
+
+	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+
+	
+<div class="login">
+  <h2 class="active"> Pesanan </h2> 
+
+    <input type="text" class="text" >
+     <span class="alamat">Alamat</span>
+
+    <br>
+    
+    <br>
+
+    <input type="number" class="text" >
+    <span class="alamat">Jumlah Pesanan</span>
+    <br>
+
+    <a href="add_to_order.php?product_id=<?php echo $product_id?>" style="text-decoration: none;">
+		<button class="signin">Pesan</button>
+	</a>
+
+</div>
 	</body>
 </html>
