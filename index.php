@@ -31,35 +31,56 @@
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
-	<head>
-		<?php include "includes/css_header.php" ?>
-	</head>
+<head>
+<link rel="stylesheet" type="text/css" href="css/inces.css">
+	
+</head>
+<body style="background-image: url('images/bakery.jpeg');background-size: cover; background-position: center;">
+   
+	
 
-	<body style="background-color:#2F3235 !important">
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form action="#">
+			<h1>BUAT AKUN</h1>
+			<span>atau gunakan email anda untuk mendaftar</span>
+			<input type="text" placeholder="Nama" />
+			<input type="email" placeholder="Email" />
+			<input type="password" placeholder="Kata Sandi" />
+			<button>daftar</button>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form action="#">
+			<h1>MASUK</h1>
+			<span>silahkan masukan email anda untuk masuk</span>
+			<input type="email" placeholder="Email" />
+			<input type="password" placeholder="Kata Sandi" />
+		
+			<button>Masuk</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Selamat Datang Kembali!</h1>
+				<p>Untuk Tetap Terhubung Dengan Kami Silahkan Masuk</p>
+				<button class="ghost" id="signIn">Sign In</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Hello, Teman!</h1>
+				<p>Isi Data Anda dan Jelajahi Toko dengan Kami</p>
+				<button class="ghost" id="signUp">Sign Up</button>
+			</div>
+		</div>
+	</div>
+</div>
 
-		<?php include "includes/header_prelogin.php" ?>
 
-	  	<div id="main_body" class="container">
-    		<div class="row">
-    			<div class="col-md-8 margin-top50">
-    				<h2 class="text-white font-80px text-center"><b>WELCOME</b></h1>
-    				<h2 class="text-white font-80px text-center"><b>De' Irma hobbies</b></h1>
-    			</div>
 
-    			<div class="col-md-4 margin-top50">
-    				<h2 class="text-white text-center"> <b>Silahkan Login</b> </h2>
-    				<form class="form" action="" method="POST">
-    					<label class="text-white">Email:</label>
-    					<input type="email" class="form-control" placeholder="Enter your Email" name="email" required><br>
-    					<label class="text-white">Password:</label>
-    					<input type="password" class="form-control" placeholder="Password" name="password" required><br>
-    					<input type="submit" class="btn btn-danger btn-lg btn-block" value="Login" name="login"><br>
-    				</form>
-    				<p class="text-white"><i>Belum Punya Akun? <a href="register.php">Register Disini</a></i></p>
-    			</div>
-    		</div>
-    	</div>
-	</body>
+<script src="css/j.js"></script>
+
+</body>
 </html>

@@ -1,0 +1,28 @@
+.bio-tab{
+   border-radius: 10px;
+}
+.product-tab{
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+ }
+ .titit{
+    height: 250px;
+    margin: 20px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+ }
+
+ .tol{
+    margin: 10px;
+ }
+
+ .ol{
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+ }
+
+ .foto{
+    width: 75;
+ }
+ 
