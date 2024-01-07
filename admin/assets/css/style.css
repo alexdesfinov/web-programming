@@ -1,0 +1,26 @@
+.form-control {
+    border: 1px solid #b2a1a1 !important;
+    padding: 8px 10px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+     margin: 0;
+}
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+textarea {
+    resize: none;
+    height: 250px;
+}
+
+.actiontd{
+    margin: 0;
+    padding: 0;
+    max-width: 50px;
+}
