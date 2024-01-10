@@ -10,18 +10,21 @@
 <head>
 
   <?php 
+
     include "includes/css_header.php";
 
+  ?>
+
+</head>
+<body style="background-image: url('images/bakery.jpeg'); background-size: cover; background-position: center;">
+
+  <?php 
     if (isset($_SESSION["login"])) {
       include "includes/header_postlogin.php";
     } else {
       include "includes/header_prelogin.php";
     }
   ?>
-
-</head>
-<body style="background-image: url('images/bakery.jpeg'); background-size: cover; background-position: center;">
-  
 
   <div class="container ">
 

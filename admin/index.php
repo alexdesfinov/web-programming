@@ -1,105 +1,76 @@
-<?php 
-session_start();
-
-include("../functions/myFunction.php");
-
-if(!isset($_SESSION["login"])) {
-    header("Location: ../login.php");
-}
-
-if(isset($_POST["tambah"])) {
-
-    $nama = $_POST["nama"];
-    $harga = $_POST["harga"];
-    $deskripsi = $_POST["deskripsi"];
-    $foto = $_FILES['foto']['name'];
-    $tmp = $_FILES['foto']['tmp_name'];
-    $path = "../images/".$foto;
-
-    if(move_uploaded_file($tmp, $path)){
-        $query = "INSERT INTO `products` (`product_id`, `product_name`, `product_price`,`product_description`,`product_image`) VALUES (NULL, '$nama','$harga','$deskripsi','$foto')";
-        $sql = mysqli_query($conn, $query);
-        if($sql){
-            $_SESSION["alert"] = true;
-        }else{
-            echo "Maaf, Terjadi Kesalahan Saat Input Data";
-            echo "<br><a href='form_simpan.php'>Kembali Ke Form</a>";
-        }
-        }else{
-            echo "Maaf, Gambar Gagal di Upload";
-            echo "<br><a href='form_simpan.php'>Kembali Ke Form</a>";
-        }
-    }
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <?php include("includes/header.php"); ?>
+    <?php include("lib/includes/head.php") ?>
+    <title>Bootstap 5 Responsive Admin Dashboard</title>
 </head>
 
-<body class="g-sidenav-show  bg-gray-200">
+<body>
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar -->
+        <?php include("lib/includes/sidebar.php") ?>
+        <!-- /#sidebar-wrapper -->
 
-    <?php include("includes/sidebar.php"); ?>
-    
-    <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
-        <?php if(isset($_SESSION["alert"])&&$_SESSION["alert"]==true): ?>
-        <div class="alert alert-success text-center " id="myAlert" style="color: black;" >
-            Produk Berhasil Ditambahkan
-        </div>	
-        <?php $_SESSION["alert"] = [] ?>
-        <?php endif; ?>
-        <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" navbar-scroll="true">
-        </nav>
-        <form action="" method="post" enctype="multipart/form-data">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>Add Items</h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <label for="">Name</label>
-                                    <input type="text" class="form-control" name="nama" >
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <label for="">Harga</label>
-                                    <input type="number" class="form-control" name="harga" >
-                                </div>
-                                <div class="col-md-12 mb-3">
-                                    <label for="">Description</label>
-                                    <textarea class="form-control" name="deskripsi"></textarea>
-                                </div>
-                                <div class="col-md-12 mb-3">
-                                    <label for="">Upload File</label>
-                                    <input type="file" class="form-control" name="foto" >
-                                </div>
-                                <div class="col-md-12 text-center">
-                                    <button type="submit" class="btn btn-primary" name="tambah" > Add Product</button>
-                                </div>
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <?php include("lib/includes/navbar.php") ?>
+
+            <div class="container-fluid px-4">
+                <div class="row g-3 my-2">
+                    <div class="col-md-3">
+                        <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+                            <div>
+                                <h3 class="fs-2">720</h3>
+                                <p class="fs-5">Products</p>
                             </div>
+                            <i class="fas fa-gift fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                        </div>
+                    </div>
 
+                    <div class="col-md-3">
+                        <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+                            <div>
+                                <h3 class="fs-2">4920</h3>
+                                <p class="fs-5">Sales</p>
+                            </div>
+                            <i
+                                class="fas fa-hand-holding-usd fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+                            <div>
+                                <h3 class="fs-2">3899</h3>
+                                <p class="fs-5">Delivery</p>
+                            </div>
+                            <i class="fas fa-truck fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+                            <div>
+                                <h3 class="fs-2">%25</h3>
+                                <p class="fs-5">Increase</p>
+                            </div>
+                            <i class="fas fa-chart-line fs-1 primary-text border rounded-full secondary-bg p-3"></i>
                         </div>
                     </div>
                 </div>
+
+                <div class="row my-5">
+                    <h3 class="fs-4 mb-3">Recent Orders</h3>
+                </div>
+
             </div>
         </div>
-        </form>
-        
-        <div>
-            <?php include("includes/footer.php"); ?>
-        </div>
-        
-    </main>
+    </div>
+    <!-- /#page-content-wrapper -->
+    </div>
 
-  <script src="../assets/js/core/bootstrap.bundle.min.js"></script>
-  <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
-  <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
-
+    <?php include("lib/includes/script.php"); ?>
 </body>
+
 </html>
