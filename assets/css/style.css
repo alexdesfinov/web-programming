@@ -168,3 +168,7 @@ a {
 textarea {
 	resize: none;
 }
+
+.login-button {
+	background-color: green;
+}

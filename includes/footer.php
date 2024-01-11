@@ -1,70 +1,87 @@
-<style>
-        .image-container {
-            display: flex;
-            align-items: center;
-        }
+<footer class="bg-dark py-5">
+  <div class="container">
+    <div class="row text-white g-4 mx-2 ">
 
-        .thumbnail {
-            max-width: 100px; /* Sesuaikan lebar gambar sesuai kebutuhan */
-            margin-right: 10px; /* Sesuaikan jarak antara gambar dan teks sesuai kebutuhan */
-        }
-
-</style>
-<div class="container-fluid mt-5" >
-  <div class="row font-12px">
-    <div class="col-md-4">
-      <div class="footer">
-        <p class="text-center">
-        <h4>
-          <h4 class="text-center"><b>Terms & Conditions</b></h4>
-          <h4 class="text-center"><a href="#"> Privacy Policy</a></h4>
-          <h4 class="text-center"><a href="#">Legal</a></h4>
-          <h4 class="text-center"><a href="#"> Sell on de' Irma hobbies</a></h4>
-          <h4 class="text-center"><a href="#"> FAQ</a></h4>
-          <h4 class="text-center"><a href="#"> Careers</a></h4>
-          <h4 class="text-center"><a href="#">Press</a></h4>
-        </h4>
+      <div class="col-md-6 col-lg-3 ">
+        <a href="#" class="text-uppercase text-decoration-none brand text-white fw-bold ">About</a>
+        <p class="mt-3 fotcolor">Allwdwajdajd
+          wdjujaujdjawdwa
+          wdnuawnduawdnawnud
         </p>
       </div>
-    </div>
 
-    <div class="col-md-4">
-      <div class="footer">
-        <p class="justify">
-        <h4 class="text-center"><b>Contact Us</b></h4> <br>
-        <a>
-        Alamat: Ganting Parak Gadang, Marapalam<br>
-        Nomor Telepon: 08116662302<br>
-        Email: deirmahobbies@gmail.com<br>
-        Jam operasional<br>
-        Setiap hari: pukul 09.00 – 20.00 WIB<br>
-        Temukan berbagai Cookies dan Cake menarik di sini!<br>
-        </a>
-        </p>
+      <div class="col-md-6 col-lg-3 ">
+        <h5 class="fw-light">Links</h5>
+        <ul class="list-unstyled">
+          <li class="my-3">
+            <a href="#" class="fotcolor text-decoration-none">
+              <i class="fa-solid fa-chevron-right me-2 "></i>Home
+            </a>
+          </li>
+          <li class="my-3">
+            <a href="#" class="fotcolor text-decoration-none">
+              <i class="fa-solid fa-chevron-right me-2 "></i>Collection
+            </a>
+          </li>
+          <li class="my-3">
+            <a href="#" class="fotcolor text-decoration-none">
+              <i class="fa-solid fa-chevron-right me-2 "></i>About Us
+            </a>
+          </li>
+        </ul>
       </div>
-    </div>
 
-    <div class="col-md-4">       
-      <div class="footer">
-        <h4 class="text-center p-3"><b>Follow De' Irma hobbies on:</b> </h4>
-        <a href="https://www.instagram.com/deirmahobbies/" class="image-container">
-        <img src="images/insta.jpg" class="thumbnail" alt="Instagram">
-        <span>INSTAGRAM</span></a>
+      <div class="col-md-6 col-lg-3 ">
+        <h5 class="fw-light mb-3">Contact Us</h5>
+        <div class="d-flex justify-content-start align-items-start my-2">
+          <span class="fotcolor">
+            <i class="fa-solid fa-map-location-dot me-3"></i>
+          </span>
+          <span class="fotcolor">
+            Padang, Sumbar, Sumatera Barat
+          </span>
+        </div>
+        <div class="d-flex justify-content-start align-items-start my-2">
+          <span class="fotcolor">
+            <i class="fa-solid fa-envelope me-3"></i>
+          </span>
+          <span class="fotcolor">
+            alexdesfinov@gmail.com
+          </span>
+        </div>
+        <div class="d-flex justify-content-start align-items-start my-2">
+          <span class="fotcolor">
+            <i class="fa-solid fa-phone me-3"></i>
+          </span>
+          <span class="fotcolor">
+            08234345453
+          </span>
+        </div>
+      </div>
 
-        <a href="https://www.tiktok.com/@mangkuksayakbadetapadang/" class="image-container py-4">
-        <img src="images/tiktok.png" class="thumbnail" alt="TikTok">
-        <span>TIKTOK</span></a>
+      <div class="col-md-6 col-lg-3 ">
+        <h5 class="fw-light mb-3">Contact Us</h5>
+        <div class="d-flex">
+          <ul class="list-unstyled d-flex ">
+            <li>
+              <a href="" class="fotcolor text-decoration-none fs-5 me-3">
+                <i class="fa-brands fa-facebook me-3"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/deirmahobbies/" class="fotcolor text-decoration-none fs-5 me-3">
+                <i class="fa-brands fa-instagram me-3"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.tiktok.com/@mangkuksayakbadetapadang/" class="fotcolor text-decoration-none fs-5 me-3">
+                <i class="fa-brands fa-tiktok me-3"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
 
-        <a href="https://maps.app.goo.gl/tyBm5zvLWnVxmDQM6/" class="image-container">
-        <img src="images/map.jpg" class="thumbnail" alt="GMaps">
-        <span>GOOGLE MAPS</span></a>
-      </div>      
     </div>
   </div>
-
-<footer><div class="col-md-20">
-      <div class="footer">
-        <p class="justify">
-        <marquee><h4 class="text-center"><b>Terima Kasih Sudah Belanja Di De' Irma hobbies</b></h4></marquee>
 </footer>
-</div>

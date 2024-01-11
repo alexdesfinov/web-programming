@@ -98,3 +98,12 @@
   .shadows {
     box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
   }
+
+  .btn-primary {
+    border:none;
+    background-color: burlywood;
+  }
+  
+  .btn-primary:hover {
+    background-color: #d49441;
+  }
