@@ -26,14 +26,13 @@ if (!isset($_SESSION["login"])) {
         <div id="page-content-wrapper">
             <?php include("lib/includes/navbar.php") ?>
 
-            <?php if (isset($_SESSION["alert"]) && $_SESSION["alert"] == true) : ?>
-                <div class="alert alert-success text-center " id="myAlert" style="color: black;">
-                    Produk Berhasil Ditambahkan
-                </div>
-                <?php $_SESSION["alert"] = [] ?>
-            <?php endif; ?>
-
             <div class="container-fluid">
+                <?php if (isset($_SESSION["alert"]) && $_SESSION["alert"] == true) : ?>
+                    <div class="alert alert-success text-center " id="myAlert" style="color: black;">
+                        Produk Berhasil Diubah
+                    </div>
+                    <?php $_SESSION["alert"] = [] ?>
+                <?php endif; ?>
                 <div class="row">
                     <div class="col-md-12 p-5">
                         <div class="card shadow ">

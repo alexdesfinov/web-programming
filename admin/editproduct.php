@@ -27,17 +27,22 @@ if (isset($_POST["edit"])) {
         if (is_file("../image/" . $data['product_image']))
             unlink("../image/" . $data['product_image']);
 
-        $query1 = "UPDATE products WHERE product_id LIKE $product_id SET product_name='" . $nama . "', product_price='" . $harga . "', product_description='" . $deskripsi . "', product_image='" . $foto . "'";
-        $sql1 = mysqli_query($conn, $query1);
-        if ($sql1) {
-            header("location: index.php");
-        } else {
-            echo "Maaf, Terjadi Kesalahan Saat Input Data";
-            echo "<br><a href='form_simpan.php'>Kembali Ke Form</a>";
+        $query = "UPDATE products SET product_name='" . $nama . "', product_price='" . $harga . "', product_description='" . $deskripsi . "', product_image='" . $foto . "'";
+        $sql = mysqli_query($conn, $query);
+        if ($sql) {
+            $_SESSION['alert'] = true;
+            header("location: product.php");
         }
     } else {
-        echo "Maaf, Gambar Gagal di Upload";
-        echo "<br><a href='form_simpan.php'>Kembali Ke Form</a>";
+        $query = "SELECT * FROM products WHERE product_id = '" . $product_id . "'";
+        $sql = mysqli_query($conn, $query);
+
+        $query = "UPDATE products SET product_name='" . $nama . "', product_price='" . $harga . "', product_description='" . $deskripsi . "'";
+        $sql = mysqli_query($conn, $query);
+        if ($sql) {
+            $_SESSION['alert'] = true;
+            header("location: product.php");
+        }
     }
 }
 
