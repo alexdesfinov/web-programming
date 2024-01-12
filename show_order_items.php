@@ -15,7 +15,7 @@ include "functions/myFunction.php";
   ?>
 </head>
 
-<body style="padding-top: 100px;">
+<body style="background-image: url('images/bakery.jpeg'); background-size: cover; background-position: center; padding-top: 100px;">
 
   <?php
 

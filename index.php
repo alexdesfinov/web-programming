@@ -18,7 +18,7 @@ include("functions/myFunction.php");
 
 </head>
 
-<body>
+<body style="background-image: url('images/bakery.jpeg'); background-size: cover; background-position: center;">
 
   <?php
   if (isset($_SESSION["login"])) {
@@ -35,14 +35,14 @@ include("functions/myFunction.php");
         <div class="row ">
           <div class="col-sm-6 text-wrap">
             <h1>DE IRMA HOBBIES</h1>
-            <p>dadwasdwadadwaddwa</p>
+            <p>De Irma hobbies merupakan umkm yang bergerak dibidang makanan yang menjual berbagai macam kue kering dan pizza dengan rasa yang memiliki cita rasa tersendiri, selain rasanya yang enak,makanan dibuat tanpa menggunakan bahan pengawet sehingga aman dikonsumsi diberbagai kalangan, menu - menu yang tersedia bisa dijadikan hampers atau cocok disajikan dalam berbagai macam acara seperti lebaran, kumpul bersama keluarga dan acara lainnya</p>
           </div>
         </div>
       </div>
     </section>
 
     <!--All products with 3/12 parts each-->
-    <section class="py-5">
+    <section class="py-5 text-white">
       <div class="container">
         <div class="title text-center">
           <h2 class="position-relative fw-bold text-uppercase ">Top Product</h2>
@@ -62,7 +62,7 @@ include("functions/myFunction.php");
                 </div>
               </a>
               <div class="text-center">
-                <div class="rating mt-3">
+                <div class="rating mt-3 textcolor">
                   <span class=""><i class="fa-solid fa-star"></i></span>
                   <span class=""><i class="fa-solid fa-star"></i></span>
                   <span class=""><i class="fa-solid fa-star"></i></span>

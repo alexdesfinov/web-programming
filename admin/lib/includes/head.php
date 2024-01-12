@@ -8,3 +8,5 @@
 <script src="https://kit.fontawesome.com/6c9caea8d0.js" crossorigin="anonymous"></script>
 <!-- External css -->
 <link rel="stylesheet" href="assets/css/admin.css" />
+
+<title>De' Irma hobbies | The home of cake</title>

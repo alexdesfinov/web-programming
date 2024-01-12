@@ -18,7 +18,7 @@ if (isset($_SESSION["login"])) {
 }
 ?>
 
-<body style="padding-top: 100px;">
+<body style="background-image: url('images/bakery.jpeg'); background-size: cover; background-position: center; padding-top: 100px; ">
 
   <div class="container my-5 ">
     <div class="row">
@@ -44,8 +44,8 @@ if (isset($_SESSION["login"])) {
             Item Berhasil Dipesan
           </div>
         <?php elseif ($_GET['msg'] == 22) : ?>
-          <div class="alert alert-warning  text-center" id="myAlert">
-            Item Sudah Dihapus
+          <div class="alert alert-success text-center" id="myAlert">
+            Item Berhasil Dipesan
           </div>
         <?php elseif ($_GET['msg'] == 33) : ?>
           <div class="alert alert-warning  text-center" id="myAlert">
@@ -59,16 +59,16 @@ if (isset($_SESSION["login"])) {
       <?php endif; ?>
 
       <?php while ($row = mysqli_fetch_assoc($result)) : ?>
-        <div class="col-md-4 col-lg-4 col-xl-4 p-2">
+        <div class="col-md-4 col-lg-4 col-xl-4 p-4 rounded-4 g-4 card">
           <div class="product-tab p-3 rounded-4 h-50">
-            <img src="images/<?php echo $row['product_image']; ?>" class="img-size curve-edge object-fit-cover w-100 h-100 ">
-            <h3 class="text-center my-4"><b><?php echo $row['product_name']; ?></b></h3>
-            <p class="text-justify my-4"><i><?php echo $row['product_description']; ?></i></p>
-            <div class="row g-2">
-              <a href="product_description.php?product_id=<?php echo $row['product_id']; ?>" class="btn btn-block btn-success">Lihat Detail</a>
-              <a href="details_form.php?product_id=<?php echo $row['product_id']; ?>&product_price=<?php echo $row['product_price']; ?>" class="btn btn-block btn-success">Pesan Sekarang</a>
-              <a href="delete_from_cart.php?product_id=<?php echo $row['product_id']; ?>" class="btn btn-block btn-danger">Hapus Dari Keranjang</a>
-            </div>
+            <img src="images/<?php echo $row['product_image']; ?>" class="img-size curve-edge object-fit-cover w-100 h-100 rounded-4 ">
+          </div>
+          <h3 class="text-center my-4"><b><?php echo $row['product_name']; ?></b></h3>
+          <p class="text-justify my-4"><i><?php echo $row['product_description']; ?></i></p>
+          <div class="row g-2 card-footer">
+            <a href="product_description.php?product_id=<?php echo $row['product_id']; ?>" class="btn btn-block btn-success">Lihat Detail</a>
+            <a href="details_form.php?product_id=<?php echo $row['product_id']; ?>&product_price=<?php echo $row['product_price']; ?>" class="btn btn-block btn-success">Pesan Sekarang</a>
+            <a href="delete_from_cart.php?product_id=<?php echo $row['product_id']; ?>" class="btn btn-block btn-danger">Hapus Dari Keranjang</a>
           </div>
         </div>
       <?php endwhile; ?>

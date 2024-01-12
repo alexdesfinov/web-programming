@@ -18,6 +18,8 @@ include("functions/myFunction.php");
 
     <link rel="stylesheet" href="assets/css/contact.css">
 
+    <title>De' Irma hobbies | The home of cake</title>
+
 </head>
 
 <body>
@@ -30,34 +32,33 @@ include("functions/myFunction.php");
     }
     ?>
 
-    <div class="containerr">
+    <div class="containerr" style="background-image: url('images/bakery.jpeg'); background-size: cover; background-position: center;">
         <span class="big-circle"></span>
         <img src="img/shape.png" class="square" alt="" />
         <div class="form">
             <div class="contact-info">
-                <h3 class="title">Let's get in touch</h3>
+                <h3 class="title">Apa Kendala Mu</h3>
                 <p class="text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
-                    dolorum adipisci recusandae praesentium dicta!
+                    Jika ada kendala silhakan hubungi kami
                 </p>
 
                 <div class="info">
                     <div class="information">
-                        <img src="img/location.png" class="icon" alt="" />
-                        <p>92 Cherry Drive Uniondale, NY 11553</p>
+                        <i class="fa-solid fa-map-location-dot me-3"></i>
+                        <p>Padang, Sumbar, Sumatera Barat</p>
                     </div>
                     <div class="information">
-                        <img src="img/email.png" class="icon" alt="" />
-                        <p>lorem@ipsum.com</p>
+                        <i class="fa-solid fa-envelope me-3"></i>
+                        <p>deirmahobbies@gmail.com</p>
                     </div>
                     <div class="information">
-                        <img src="img/phone.png" class="icon" alt="" />
-                        <p>123-456-789</p>
+                        <i class="fa-solid fa-phone me-3"></i>
+                        <p>08234345453</p>
                     </div>
                 </div>
 
                 <div class="social-media">
-                    <p>Connect with us :</p>
+                    <p>Hubungi kami dengan :</p>
                     <div class="social-icons">
                         <a href="#">
                             <i class="fab fa-facebook-f"></i>
@@ -65,7 +66,7 @@ include("functions/myFunction.php");
                         <a href="#">
                             <i class="fab fa-twitter"></i>
                         </a>
-                        <a href="#">
+                        <a href="https://www.instagram.com/deirmahobbies/">
                             <i class="fab fa-instagram"></i>
                         </a>
                         <a href="#">
@@ -80,7 +81,7 @@ include("functions/myFunction.php");
                 <span class="circle two"></span>
 
                 <form action="index.html" autocomplete="off">
-                    <h3 class="title">Contact us</h3>
+                    <h3 class="title">Hubungi Kami</h3>
                     <div class="input-container">
                         <input type="text" name="name" class="input" />
                         <label for="">Username</label>
@@ -101,7 +102,7 @@ include("functions/myFunction.php");
                         <label for="">Message</label>
                         <span>Message</span>
                     </div>
-                    <input type="submit" value="Send" class="btnn" />
+                    <input type="submit" value="Kirim" class="btnn" />
                 </form>
             </div>
         </div>

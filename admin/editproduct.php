@@ -27,7 +27,7 @@ if (isset($_POST["edit"])) {
         if (is_file("../image/" . $data['product_image']))
             unlink("../image/" . $data['product_image']);
 
-        $query1 = "UPDATE produtcs SET product_name='" . $nama . "', product_price='" . $harga . "', product_description='" . $deskripsi . "', product_image='" . $foto . "'";
+        $query1 = "UPDATE products WHERE product_id LIKE $product_id SET product_name='" . $nama . "', product_price='" . $harga . "', product_description='" . $deskripsi . "', product_image='" . $foto . "'";
         $sql1 = mysqli_query($conn, $query1);
         if ($sql1) {
             header("location: index.php");

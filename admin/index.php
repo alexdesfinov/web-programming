@@ -72,26 +72,33 @@ $jumlah = mysqli_num_rows($data);
                     <h3 class="fs-4 mb-3">Recent Orders</h3>
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-12 p-5">
                                 <div class="card shadow ">
                                     <div class="card-body table-responsive">
-                                        <table class="table table-striped align-middle">
+                                        <table class="table table-borderless align-middle">
                                             <thead class="text-center table-dark">
                                                 <tr>
-                                                    <th>ID</th>
-                                                    <th>NAMA</th>
-                                                    <th>HARGA</th>
-                                                    <th>IMAGE</th>
+                                                    <th>ORDER ID</th>
+                                                    <th>USER ID</th>
+                                                    <th>USER NAME</th>
+                                                    <th>PRODUK</th>
+                                                    <th>ALAMAT</th>
+                                                    <th>JUMLAH</th>
+                                                    <th>Total</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <?php $data = getData("SELECT * FROM products"); ?>
+
+                                                <?php $data = getData("SELECT * FROM orders"); ?>
                                                 <?php foreach ($data as $row) : ?>
                                                     <tr class="text-center">
-                                                        <td><?php echo $row["product_id"]; ?></td>
-                                                        <td><?php echo $row["product_name"]; ?></td>
-                                                        <td><?php echo $row["product_price"]; ?></td>
-                                                        <td><img src="../images/<?php echo $row["product_image"]; ?>" alt="" width="75" height="75"></td>
+                                                        <td><?php echo $row["order_id"]; ?></td>
+                                                        <td><?php echo $row["user_id"]; ?></td>
+                                                        <td><?php echo $row["name"]; ?></td>
+                                                        <td><?php echo $row["product"]; ?></td>
+                                                        <td><?php echo $row["address"]; ?></td>
+                                                        <td><?php echo $row["amount"]; ?></td>
+                                                        <td><?php echo $row["total"]; ?></td>
                                                     </tr>
                                                 <?php endforeach; ?>
 

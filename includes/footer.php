@@ -4,9 +4,7 @@
 
       <div class="col-md-6 col-lg-3 ">
         <a href="#" class="text-uppercase text-decoration-none brand text-white fw-bold ">About</a>
-        <p class="mt-3 fotcolor">Allwdwajdajd
-          wdjujaujdjawdwa
-          wdnuawnduawdnawnud
+        <p class="mt-3 fotcolor">De Irma hobbies merupakan umkm yang bergerak dibidang makanan yang menjual berbagai macam kue kering dan pizza dengan rasa yang memiliki cita rasa tersendiri, selain rasanya yang enak,makanan dibuat tanpa menggunakan bahan pengawet sehingga aman dikonsumsi diberbagai kalangan, menu - menu yang tersedia bisa dijadikan hampers atau cocok disajikan dalam berbagai macam acara seperti lebaran, kumpul bersama keluarga dan acara lainnya
         </p>
       </div>
 
@@ -46,7 +44,7 @@
             <i class="fa-solid fa-envelope me-3"></i>
           </span>
           <span class="fotcolor">
-            alexdesfinov@gmail.com
+            deirmahobbies@gmail.com
           </span>
         </div>
         <div class="d-flex justify-content-start align-items-start my-2">
@@ -60,7 +58,7 @@
       </div>
 
       <div class="col-md-6 col-lg-3 ">
-        <h5 class="fw-light mb-3">Contact Us</h5>
+        <h5 class="fw-light mb-3">Contact With Us</h5>
         <div class="d-flex">
           <ul class="list-unstyled d-flex ">
             <li>
