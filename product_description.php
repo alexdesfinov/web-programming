@@ -1,8 +1,12 @@
 <?php
 session_start();
+?>
+
+<!DOCTYPE html>
+<html>
+<?php
 
 include("functions/myFunction.php");
-
 
 include "includes/header.php";
 ?>
@@ -12,7 +16,7 @@ include "includes/header.php";
 
 <body style="background-image: url('images/bakery.jpeg'); background-size: cover; background-position: center;">
 	<?php
-	if (isset($_SESSION["login"])) {
+	if (isset($_SESSION['login'])) {
 		include "includes/header_postlogin.php";
 	} else {
 		include "includes/header_prelogin.php";
