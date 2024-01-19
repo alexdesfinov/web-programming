@@ -1,11 +1,11 @@
 <?php
+$user_id = $_SESSION['user_id'];
 
-$datacart = mysqli_query($conn, "SELECT * FROM cart");
+$datacart = mysqli_query($conn, "SELECT * FROM cart WHERE user_id = $user_id");
 $jumlahcart = mysqli_num_rows($datacart);
 
-$datawish = mysqli_query($conn, "SELECT * FROM wishlist");
+$datawish = mysqli_query($conn, "SELECT * FROM wishlist WHERE user_id = $user_id");
 $jumlahwish = mysqli_num_rows($datawish);
-
 
 ?>
 

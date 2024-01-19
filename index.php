@@ -30,12 +30,12 @@ include("functions/myFunction.php");
 
   <div class="container-fluid p-0 overflow-hidden ">
 
-    <section class="top-banner" style="background: url('images/2.jpg');">
+    <section class="top-banner text-white" style="background: url('images/bakery.jpeg');">
       <div class="container">
         <div class="row ">
           <div class="col-sm-6 text-wrap">
             <h1>DE IRMA HOBBIES</h1>
-            <p>De Irma hobbies merupakan umkm yang bergerak dibidang makanan yang menjual berbagai macam kue kering dan pizza dengan rasa yang memiliki cita rasa tersendiri, selain rasanya yang enak,makanan dibuat tanpa menggunakan bahan pengawet sehingga aman dikonsumsi diberbagai kalangan, menu - menu yang tersedia bisa dijadikan hampers atau cocok disajikan dalam berbagai macam acara seperti lebaran, kumpul bersama keluarga dan acara lainnya</p>
+            <p>De Irma hobbies merupakan umkm yang bergerak dibidang makanan yang menjual berbagai macam kue kering dan pizza dengan rasa yang memiliki cita rasa tersendiri, selain rasanya yang enak,makanan dibuat tanpa menggunakan bahan pengawet sehingga aman dikonsumsi diberbagai kalangan, menu - menu yang tersedia bisa dijadikan hampers atau cocok disajikan dalam berbagai macam acara seperti lebaran, kumpul bersama keluarga dan acara lainnya.</p>
           </div>
         </div>
       </div>

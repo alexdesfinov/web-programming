@@ -54,7 +54,7 @@ include "functions/myFunction.php";
                     <td><?php echo $row["product"]; ?></td>
                     <td><?php echo $row["address"]; ?></td>
                     <td><?php echo $row["amount"]; ?></td>
-                    <td><?php echo $row["total"]; ?></td>
+                    <td><?php echo number_format($row["total"], 0, ",", "."); ?></td>
                   </tr>
                 <?php endforeach; ?>
 

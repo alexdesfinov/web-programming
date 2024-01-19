@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION["login"])) {
-  header('Location: register.php');
+  header('Location: login.php');
 }
 include "functions/myFunction.php";
 ?>
@@ -28,6 +28,7 @@ if (isset($_SESSION["login"])) {
 
       $query = "SELECT * FROM `cart` c JOIN `products` p ON c.`product_id`=p.`product_id` WHERE c.`user_id`=$user_id";
       $result = mysqli_query($conn, $query);
+      $cek = mysqli_num_rows($result);
       ?>
 
       <?php if (isset($_GET['msg'])) : ?>
@@ -58,20 +59,26 @@ if (isset($_SESSION["login"])) {
         <?php endif; ?>
       <?php endif; ?>
 
-      <?php while ($row = mysqli_fetch_assoc($result)) : ?>
-        <div class="col-md-4 col-lg-4 col-xl-4 p-4 rounded-4 g-4 card">
-          <div class="product-tab p-3 rounded-4 h-50">
-            <img src="images/<?php echo $row['product_image']; ?>" class="img-size curve-edge object-fit-cover w-100 h-100 rounded-4 ">
+      <?php if ($cek >= 1) : ?>
+        <?php while ($row = mysqli_fetch_assoc($result)) : ?>
+          <div class="col-md-4 col-lg-4 col-xl-4 p-4 rounded-4 g-4 card">
+            <div class="product-tab p-3 rounded-4 h-50">
+              <img src="images/<?php echo $row['product_image']; ?>" class="img-size curve-edge object-fit-cover w-100 h-100 rounded-4 ">
+            </div>
+            <h3 class="text-center my-4"><b><?php echo $row['product_name']; ?></b></h3>
+            <p class="text-justify my-4"><i><?php echo $row['product_description']; ?></i></p>
+            <div class="row g-2 card-footer">
+              <a href="product_description.php?product_id=<?php echo $row['product_id']; ?>" class="btn btn-block btn-success">Lihat Detail</a>
+              <a href="details_form.php?product_id=<?php echo $row['product_id']; ?>&product_price=<?php echo $row['product_price']; ?>" class="btn btn-block btn-success">Pesan Sekarang</a>
+              <a href="delete_from_cart.php?product_id=<?php echo $row['product_id']; ?>" class="btn btn-block btn-danger">Hapus Dari Keranjang</a>
+            </div>
           </div>
-          <h3 class="text-center my-4"><b><?php echo $row['product_name']; ?></b></h3>
-          <p class="text-justify my-4"><i><?php echo $row['product_description']; ?></i></p>
-          <div class="row g-2 card-footer">
-            <a href="product_description.php?product_id=<?php echo $row['product_id']; ?>" class="btn btn-block btn-success">Lihat Detail</a>
-            <a href="details_form.php?product_id=<?php echo $row['product_id']; ?>&product_price=<?php echo $row['product_price']; ?>" class="btn btn-block btn-success">Pesan Sekarang</a>
-            <a href="delete_from_cart.php?product_id=<?php echo $row['product_id']; ?>" class="btn btn-block btn-danger">Hapus Dari Keranjang</a>
-          </div>
+        <?php endwhile; ?>
+      <?php else : ?>
+        <div class="text-white d-flex align-items-center justify-content-center" style="height: 75vh; border-radius: 20px; ">
+          <h1>Keranjang Kosong</h1>
         </div>
-      <?php endwhile; ?>
+      <?php endif; ?>
     </div>
   </div>
 

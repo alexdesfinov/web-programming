@@ -52,8 +52,13 @@ include("functions/myFunction.php");
                                         </div>
                                         <p class="card-text"><?php echo $row['product_description']; ?></p>
                                         <div class="card-footer d-flex align-items-end mt-auto bg-white">
-                                            <a href="includes/controller/add_to_cart.php?product_id=<?php echo $row['product_id']; ?>" class="btn cartcolor me-3"><i class="fa-solid fa-cart-shopping text-white"></i></a>
-                                            <a href="includes/controller/add_to_wishlist.php?product_id=<?php echo $row['product_id']; ?>" class="btn cartcolor "><i class="fas fa-heart fa-lg text-white"></i></a>
+                                            <?php if (isset($_SESSION["login"])) : ?>
+                                                <a href="includes/controller/add_to_cart.php?product_id=<?php echo $row['product_id']; ?>" class="btn cartcolor me-3"><i class="fa-solid fa-cart-shopping text-white"></i></a>
+                                                <a href="includes/controller/add_to_wishlist.php?product_id=<?php echo $row['product_id']; ?>" class="btn cartcolor "><i class="fas fa-heart fa-lg text-white"></i></a>
+                                            <?php else : ?>
+                                                <a href="login.php" class="btn cartcolor me-3"><i class="fa-solid fa-cart-shopping text-white"></i></a>
+                                                <a href="login.php" class="btn cartcolor "><i class="fas fa-heart fa-lg text-white"></i></a>
+                                            <?php endif; ?>
                                         </div>
                                     </div>
                                 </div>

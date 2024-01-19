@@ -8,7 +8,7 @@ include("functions/myFunction.php");
 include "includes/header.php";
 ?>
 
-<body>
+<body style="background-image: url('images/bakery.jpeg'); background-size: cover; background-position: center;">
 	<?php
 	if (isset($_SESSION["login"])) {
 		include "includes/header_postlogin.php";
@@ -62,8 +62,13 @@ include "includes/header.php";
 							<p class="card-text"><small class="text-body-secondary fw-bold ">Rp <?php echo number_format($row["product_price"], 0, ",", "."); ?></small></p>
 						</div>
 						<div class="card-footer d-flex align-items-end mt-auto bg-white">
-							<a href="includes/controller/add_to_cart.php?product_id=<?php echo $product_id; ?>" class="btn cartcolor me-3"><i class="fa-solid fa-cart-shopping text-white"></i></a>
-							<a href="includes/controller/add_to_wishlist.php?product_id=<?php echo $product_id; ?>" class="btn cartcolor me-3"><i class="fa-solid fa-heart text-white"></i></a>
+							<?php if (isset($_SESSION["login"])) : ?>
+								<a href="includes/controller/add_to_cart.php?product_id=<?php echo $product_id; ?>" class="btn cartcolor me-3"><i class="fa-solid fa-cart-shopping text-white"></i></a>
+								<a href="includes/controller/add_to_wishlist.php?product_id=<?php echo $product_id; ?>" class="btn cartcolor me-3"><i class="fa-solid fa-heart text-white"></i></a>
+							<?php else : ?>
+								<a href="login.php" class="btn cartcolor me-3"><i class="fa-solid fa-cart-shopping text-white"></i></a>
+								<a href="login.php" class="btn cartcolor me-3"><i class="fa-solid fa-heart text-white"></i></a>
+							<?php endif; ?>
 						</div>
 					</div>
 				</div>

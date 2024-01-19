@@ -37,9 +37,9 @@ if (isset($_POST["pesan"])) {
 	<!-- <link rel="stylesheet" href="css/incesdp.css"> -->
 </head>
 
-<body style="padding-top: 150px;">
+<body style="background-image: url('images/bakery.jpeg'); background-size: cover; background-position: center; padding-top: 150px; ">
 
-	<form action="" method="post">
+	<form action="" method="post" class="mb-5">
 		<div class="container d-flex justify-content-center rounded-5 p-5" style="background-color: burlywood;">
 			<div class="row text-center mx-0 p-4 pt-0" style="color: black;">
 				<div class="container mb-4">
@@ -61,6 +61,8 @@ if (isset($_POST["pesan"])) {
 			</div>
 		</div>
 	</form>
+
+	<?php include "includes/footer.php" ?>
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 	<script src="assets/js/script.js"></script>

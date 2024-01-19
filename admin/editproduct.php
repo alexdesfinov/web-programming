@@ -8,7 +8,9 @@ if (!isset($_SESSION["login"])) {
 }
 
 $product_id = $_GET['product_id'];
-$data = getData("SELECT * FROM products WHERE product_id LIKE $product_id");
+$query = "SELECT * FROM products WHERE product_id = '$product_id'";
+$sql = mysqli_query($conn, $query);
+$data = mysqli_fetch_array($sql);
 
 if (isset($_POST["edit"])) {
 
@@ -20,24 +22,21 @@ if (isset($_POST["edit"])) {
     $path = "../images/" . $foto;
 
     if (move_uploaded_file($tmp, $path)) {
-        $query = "SELECT * FROM products WHERE product_id = '" . $product_id . "'";
+        $query = "SELECT * FROM products WHERE product_id = '$product_id'";
         $sql = mysqli_query($conn, $query);
         $data = mysqli_fetch_array($sql);
 
         if (is_file("../image/" . $data['product_image']))
             unlink("../image/" . $data['product_image']);
 
-        $query = "UPDATE products SET product_name='" . $nama . "', product_price='" . $harga . "', product_description='" . $deskripsi . "', product_image='" . $foto . "'";
+        $query = "UPDATE products SET product_name='$nama', product_price='$harga', product_description='$deskripsi', product_image='$foto' WHERE product_id = $product_id";
         $sql = mysqli_query($conn, $query);
         if ($sql) {
             $_SESSION['alert'] = true;
             header("location: product.php");
         }
     } else {
-        $query = "SELECT * FROM products WHERE product_id = '" . $product_id . "'";
-        $sql = mysqli_query($conn, $query);
-
-        $query = "UPDATE products SET product_name='" . $nama . "', product_price='" . $harga . "', product_description='" . $deskripsi . "'";
+        $query = "UPDATE products SET product_name='$nama', product_price='$harga', product_description='$deskripsi' WHERE product_id = $product_id";
         $sql = mysqli_query($conn, $query);
         if ($sql) {
             $_SESSION['alert'] = true;
@@ -72,17 +71,18 @@ if (isset($_POST["edit"])) {
                     <div class="row my-5 p-3 rounded-3 shadows">
                         <div class="card-body">
                             <div class="row">
+                                <?php var_dump($data); ?>
                                 <div class="col-md-6 mb-3">
                                     <label for="">Name</label>
-                                    <input type="text" class="form-control" name="nama" value="<?php echo $data[0]["product_name"]; ?>">
+                                    <input type="text" class="form-control" name="nama" value="<?php echo $data['product_name']; ?>">
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="">Harga</label>
-                                    <input type="number" class="form-control" name="harga" value="<?php echo $data[0]["product_price"]; ?>">
+                                    <input type="number" class="form-control" name="harga" value="<?php echo $data['product_price']; ?>">
                                 </div>
                                 <div class="col-md-12 mb-3">
                                     <label for="">Description</label>
-                                    <textarea class="form-control" name="deskripsi"><?php echo $data[0]["product_description"]; ?></textarea>
+                                    <textarea class="form-control" name="deskripsi"><?php echo $data['product_description']; ?></textarea>
                                 </div>
                                 <div class="col-md-12 mb-3">
                                     <label for="">Upload File</label>
