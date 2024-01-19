@@ -71,7 +71,6 @@ if (isset($_POST["edit"])) {
                     <div class="row my-5 p-3 rounded-3 shadows">
                         <div class="card-body">
                             <div class="row">
-                                <?php var_dump($data); ?>
                                 <div class="col-md-6 mb-3">
                                     <label for="">Name</label>
                                     <input type="text" class="form-control" name="nama" value="<?php echo $data['product_name']; ?>">

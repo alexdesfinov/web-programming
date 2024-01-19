@@ -1,4 +1,3 @@
-<html>
 <?php
 session_start();
 
@@ -7,6 +6,9 @@ include("functions/myFunction.php");
 
 include "includes/header.php";
 ?>
+
+<!DOCTYPE html>
+<html>
 
 <body style="background-image: url('images/bakery.jpeg'); background-size: cover; background-position: center;">
 	<?php
